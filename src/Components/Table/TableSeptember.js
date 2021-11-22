@@ -111,6 +111,11 @@ export default function BasicTable() {
             Tabel Data Covid Surabaya Tahun 2021
             </Typography>
             
+            <Button onClick={() => history.push('/Peta')} variant="contained" color="error" size='small' 
+            sx ={{marginRight:1}}>
+                Lihat Peta Pesebaran
+              </Button>
+            
             <Button onClick={() => history.push('/TableOktober')} variant="contained" color="secondary" size='small' 
             sx ={{marginRight:1}}>
                 Next
