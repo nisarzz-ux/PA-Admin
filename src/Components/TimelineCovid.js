@@ -46,7 +46,7 @@ export default function ColorsTimeline() {
                               variant="contained" 
                               color="secondary" 
                               size='small'
-                              sx={{marginLeft:60}}>
+                              sx={{marginLeft:"20vw"}}>
                                 Kembali
                               </Button>
                         </Typography>

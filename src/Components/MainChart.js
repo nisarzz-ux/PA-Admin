@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Barchart from './BarChart.js';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { useHistory } from 'react-router-dom';
-
 
 
 

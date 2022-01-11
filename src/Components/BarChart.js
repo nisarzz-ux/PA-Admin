@@ -1,4 +1,3 @@
-import { sizeWidth } from '@mui/system';
 import React, {Component} from 'react';
 import { Bar } from 'react-chartjs-2';
 
