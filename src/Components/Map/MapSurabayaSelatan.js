@@ -61,7 +61,7 @@ export default function Peta(){
     
     <Box sx={{
         marginTop:"5vw",
-        marginLeft:"15vw"
+        marginLeft:"1vw"
         }}>
       <MapContainer center={[-7.2941241,112.7207974]} zoom={13} scrollWheelZoom={true}>
       <TileLayer

@@ -17,7 +17,8 @@ import SideFaskes from './Components/Form/SideFaskes';
 
 
 // Tampilan Menu Peta
-import MenuPeta from './Components/Map/SideMapMenu.js';
+import MenuPeta from './Components/Map/SideMenu/SideMapMenu.js';
+import PetaFaskes from './Components/Form/SideFaskesPeta';
 
 // Edit Data 
 import EditTable from './Components/Table/Edit/EditDemografi.js';
@@ -30,11 +31,11 @@ import Editfaskes from './Components/Table/Edit/EditFaskes';
 
 
 // Tampilan Peta 
-import Utara from './Components/Map/MapSurabayaUtara.js';
-import Selatan from './Components/Map/MapSurabayaSelatan.js';
-import Barat from './Components/Map/MapSurabayaBarat.js';
-import Timur from './Components/Map/MapSurabayaTimur.js';
-import Pusat from './Components/Map/MapSurabayaPusat.js';
+import Utara from './Components/Map/SideMenu/SideMapUtara.js';
+import Selatan from './Components/Map/SideMenu/SideMapSelatan.js';
+import Barat from './Components/Map/SideMenu/SideMapBarat.js';
+import Timur from './Components/Map/SideMenu/SideMapTimur.js';
+import Pusat from './Components/Map/SideMenu/SideMapPusat.js';
 
 // Isi Data
 import FormDemografi from './Components/Form/FormDemografi.js';
@@ -93,6 +94,8 @@ function App() {
         <Route exact path='/Barat' component={Barat}/>
         <Route exact path='/Timur' component={Timur}/>
         <Route exact path='/Pusat' component={Pusat}/>
+        <Route exact path='/PetaFaskes' component={PetaFaskes}/>
+
 
         {/* Edit Data */}
         <Route exact path='/EditDemografi/:id' component={EditTable} />

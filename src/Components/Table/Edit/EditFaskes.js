@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 function FormFaskes(props){
 
-    const[kecamatan,setKecamatan] = React.useState();
+    const[nama_faskes,setNamaFaskes] = React.useState();
     const[bagian_wilayah,setBagianWilayah] = React.useState();
     const[jenis_faskes,setJenisFaskes] = React.useState();
     const[alamat,setAlamat] = React.useState();
@@ -22,7 +22,7 @@ function FormFaskes(props){
         axios.get('http://127.0.0.1:8000/api/faskesTabel/' + props.match.params.id)
         .then(response => {
             console.log(response)
-            setKecamatan(response.data[0].kecamatan)
+            setNamaFaskes(response.data[0].nama_faskes)
             setBagianWilayah(response.data[0].bagian_wilayah)
             setJenisFaskes(response.data[0].jenis_faskes)
             setAlamat(response.data[0].alamat)
@@ -35,7 +35,7 @@ function FormFaskes(props){
 
     const submit = () =>{
         const TabelFaskes = {
-            kecamatan,
+            nama_faskes,
             bagian_wilayah,
             jenis_faskes,
             alamat,
@@ -76,7 +76,7 @@ function FormFaskes(props){
                 }}>
                     <Form.Group className="mb-1">
                         <Form.Label> Masukan Kecamatan </Form.Label>
-                        <Form.Control type="text" value={kecamatan} placeholder="Masukan Kecamatan"  onChange = {e => setKecamatan(e.target.value)}/>
+                        <Form.Control type="text" value={nama_faskes} placeholder="Masukan Nama Puskesmas / Rumah Sakit "  onChange = {e => setNamaFaskes(e.target.value)}/>
                     </Form.Group>
 
                     <Form.Group className="mb-1">

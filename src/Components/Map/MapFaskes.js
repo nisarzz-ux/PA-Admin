@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import { CircleMarker, MapContainer,Marker,Popup, TileLayer} from 'react-leaflet';
+import { MapContainer,Marker,Popup, TileLayer} from 'react-leaflet';
 import './Map.css';
 import axios from 'axios';
 import swal from 'sweetalert';
@@ -15,9 +15,9 @@ export default function Peta(){
     },[]);
 
     function getData(){
-        axios.get('http://127.0.0.1:8000/api/demografi').then((response) => {
+        axios.get('http://127.0.0.1:8000/api/faskesTabel').then((response) => {
           swal({
-              title: "Selamat Datang Pada Peta Kota Surabaya!",
+              title: "Selamat Datang Pada Peta Faskes di Kota Surabaya !",
               text: "klik Tombol Kembali!",
               icon: "success",
               button: "Kembali",
@@ -30,7 +30,7 @@ export default function Peta(){
 
     return(
       <div className = "petaBox">
-      <MapContainer center={[-7.223690, 112.775000]} zoom={14} scrollWheelZoom={true}>
+      <MapContainer center={[-7.223690, 112.775000]} zoom={12} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -38,13 +38,13 @@ export default function Peta(){
       {data.map((row => 
           <Marker position={[row.latKoordinat, row.longKoordinat]}>
             <Popup >
-            {row.kecamatan} <br /> Penduduk Laki : {row.penduduk_laki} <br /> Penduduk Perempuan {row.penduduk_wanita}
+            {row.nama_faskes} 
+            <br /> Bagian : {row.bagian_wilayah} 
+            <br /> Alamat : {row.alamat}
+            <br /> Status : {row.status}
             </Popup>
           </Marker>
       ))}
-
-      
-
     </MapContainer>
     </div>
     )

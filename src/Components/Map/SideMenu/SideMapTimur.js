@@ -13,11 +13,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import PetaSurabaya from './MapTraining.js';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
+import Button from '@mui/material/Button';
+import CreateIcon from '@mui/icons-material/Create';
+import MapSurabayaTimur from '../MapSurabayaTimur.js';
 
 const drawerWidth = 240;
 
@@ -81,7 +80,7 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <PetaSurabaya />
+      <MapSurabayaTimur />
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -93,9 +92,28 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-             Peta Pesebaran Penduduk Kota Surabaya 
+          <Typography variant="h6" noWrap component="div" sx={{marginRight:"20vw"}}>
+           Peta Pesebaran Demografi Kota Surabaya 
           </Typography>
+
+          
+            <Button href='/Timeline'
+            variant="contained" 
+            color="info" 
+            size='small'
+            sx ={{marginRight:1}}
+            >
+                TimeLine
+              </Button>
+
+              <Button href='/GrafikCoba' variant="contained" color="success" size='small'>
+                Diagram
+              </Button>
+
+              <Button href='/FormDemografi ' variant="contained" color="error" size='small' style={{marginLeft:10}}>
+                  Input Form
+              </Button>
+
         </Toolbar>
       </AppBar>
       <Drawer
@@ -115,23 +133,42 @@ export default function PersistentDrawerLeft() {
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {['', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+          <ListItem >
+              <AddLocationIcon />
+              <Button variant="text" href="/">
+                Peta Kota Surabaya
+              </Button>
             </ListItem>
-          ))}
-        </List>
+        </DrawerHeader>
+      
+          <List>
+                {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
+                  <ListItem>
+                  <AddLocationIcon color="warning"></AddLocationIcon>
+                  <Button variant="text" href={"/"+tempat}>
+                      Surabaya {tempat}
+                  </Button>
+                  </ListItem>
+                )}
+          </List>
         <Divider />
+
+        <List>
+          <Button size="medium" variant="text" color="success" sx={{marginLeft:"3vw"}} href='/Form'>Form</Button>
+        {['TableSeptember','TableOktober','TableNovember','TableDesember','TableJanuari'].map((table) =>
+                  <ListItem>
+                  <CreateIcon></CreateIcon>
+                  <Button variant="text" href={"/"+table}>
+                     {table}
+                  </Button>
+                  </ListItem>
+                )}
+        </List>
+
       </Drawer>
+      
       <Main open={open}>
         <DrawerHeader />
-        
       </Main>
     </Box>
   );

@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 import FaskesTabel from '../Table/Tabel/TableFaskes';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import CreateIcon from '@mui/icons-material/Create';
+import TableViewIcon from '@mui/icons-material/TableView';
 
 const drawerWidth = 240;
 
@@ -106,13 +107,13 @@ export default function PersistentDrawerLeft() {
                 Next
               </Button>
             
-            <Button href='/Timeline'
+            <Button href='/PetaFaskes'
             variant="contained" 
             color="info" 
             size='small'
             sx ={{marginRight:1}}
             >
-                TimeLine
+                Lihat Peta
               </Button>
 
               <Button href='/GrafikCoba' variant="contained" color="success" size='small'>
@@ -151,11 +152,11 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
       
           <List>
-                {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
+                {['Utara','Selatan','Barat','Timur','Pusat','PetaFaskes'].map((tempat) =>
                   <ListItem>
                   <AddLocationIcon color="warning"></AddLocationIcon>
                   <Button variant="text" href={"/"+tempat}>
-                      Surabaya {tempat}
+                     Surabaya {tempat}
                   </Button>
                   </ListItem>
                 )}
@@ -164,11 +165,11 @@ export default function PersistentDrawerLeft() {
 
         <List>
           <Button size="medium" variant="text" color="success" sx={{marginLeft:"3vw"}} href='/Form'>Form</Button>
-        {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
+          {['TableOktober','TableNovember','TableDesember','TableJanuari','TableFaskes'].map((table) =>
                   <ListItem>
-                  <CreateIcon></CreateIcon>
-                  <Button variant="text" href={"/"+tempat}>
-                     {tempat}
+                  {/* <CreateIcon></CreateIcon> */}
+                  <Button variant="text" href={"/"+table} startIcon={<TableViewIcon />}>
+                     {table}
                   </Button>
                   </ListItem>
                 )}

@@ -98,7 +98,7 @@ export default function BasicTable() {
        color = "Green"
        sx={{marginBottom:'2%',marginTop:'2%'}}
     >
-      Rekapan Pesebaran Covid-19 Bulan September
+      Rekapan Pesebaran Covid-19 Bulan November 
       </Typography>
 
      

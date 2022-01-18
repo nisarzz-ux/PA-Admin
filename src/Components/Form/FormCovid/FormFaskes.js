@@ -9,7 +9,7 @@ import './Form.css';
 
 function FormFaskes(){
 
-    const[kecamatan,setKecamatan] = React.useState();
+    const[nama_faskes,setNamaFaskes] = React.useState();
     const[bagian_wilayah,setBagianWilayah] = React.useState();
     const[jenis_faskes,setJenisFaskes] = React.useState();
     const[alamat,setAlamat] = React.useState();
@@ -21,7 +21,7 @@ function FormFaskes(){
     
     
     const TabelFaskes = {
-        kecamatan,
+        nama_faskes,
         bagian_wilayah,
         jenis_faskes,
         alamat,
@@ -67,8 +67,8 @@ function FormFaskes(){
                     marginRight:"20vw"
                 }}>
                     <Form.Group className="mb-1">
-                        <Form.Label> Masukan Kecamatan </Form.Label>
-                        <Form.Control type="text" placeholder="Masukan Kecamatan"  onChange = {e => setKecamatan(e.target.value)}/>
+                        <Form.Label> Masukan Nama Fasilitas Kesehatan </Form.Label>
+                        <Form.Control type="text" placeholder="Masukan Nama Puskesmas / Rumah Sakit "  onChange = {e => setNamaFaskes(e.target.value)}/>
                     </Form.Group>
 
                     <Form.Group className="mb-1">

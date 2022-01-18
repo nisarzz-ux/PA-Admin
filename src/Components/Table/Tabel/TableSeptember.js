@@ -87,7 +87,7 @@ export default function BasicTable() {
     setPage(0);
   };
 
-  const filter = 100;
+  const filter = 1;
 
   return (
     <Box sx={{marginTop:"5vw"}}>    
@@ -121,8 +121,7 @@ export default function BasicTable() {
         </TableHead>
 
         <TableBody>
-          {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (row) => (
-            <TableRow  
+          {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (row) => filter <= row.positif && <TableRow 
               key={row.id_tableSep}>
               <TableCell align="left">{row.kecamatan}</TableCell>
               <TableCell align="center">{row.bagian_wilayah}</TableCell>
@@ -150,8 +149,8 @@ export default function BasicTable() {
 
                 </Grid>
               </TableCell>
-            </TableRow>
-          ))}
+           </TableRow>
+          )}
         </TableBody>
         
         <TableFooter>

@@ -1,9 +1,11 @@
 import React from "react";
 import { MapContainer,Marker,Popup, TileLayer} from 'react-leaflet';
 import {
-  AppBar,Box,Toolbar,Typography,
-  Button,IconButton
+  Box,Toolbar,Typography,
+  Button,IconButton,
 } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import MuiAppBar from '@mui/material/AppBar';
 
 
 
@@ -23,49 +25,25 @@ const rows = [
 
 
 export default function Peta(){
+
+    const theme = useTheme();
+    const [open, setOpen] = React.useState(false);
+
+    const handleDrawerOpen = () => {
+      setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+      setOpen(false);
+    };
+
      
     return(
-      <div>
-        <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Peta Surabaya Wilayah Utara
-          </Typography>
-          
-          <Button href='/' variant="contained" color="warning" size='small' 
-          sx ={{marginRight:1}}>
-              Kembali
-            </Button>
-          
-          <Button href='/Timeline' 
-          variant="contained" 
-          color="info" 
-          size='small'
-          sx ={{marginRight:1}}
-          >
-              Lihat TimeLine
-            </Button>
-
-            <Button href='/GrafikCoba' variant="contained" color="success" size='small'>
-              Lihat Diagram
-            </Button>
-
-        </Toolbar>
-      </AppBar>
-    
+      
 
       <Box sx={{
         marginTop:"5vw",
-        marginLeft:"15vw"
+        marginLeft:"1vw"
         }}>
       <MapContainer center={[-7.223690, 112.775000]} zoom={13} scrollWheelZoom={true}>
       <TileLayer
@@ -81,6 +59,6 @@ export default function Peta(){
       ))}
     </MapContainer>
     </Box>
-    </div>
+    
     )
 }

@@ -1,10 +1,10 @@
  .leaflet-container{
-     width: 60vw;
-     height: 40vw;
+     width: 100vw;
+     height: 50vw;
      
  }
 
  .petaBox{
-     margin-top: 10vw;
-     margin-left: 20vw;
+     margin-top: 5vw;
+     margin-left:0vw;
  }

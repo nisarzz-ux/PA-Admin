@@ -40,7 +40,7 @@ function FormTry(){
             icon: "success",
             button: "back",
            })
-           history.push("/TableDemografi")
+           history.push("/")
        })
        .catch(error => {
            console.log(error)
@@ -75,6 +75,8 @@ function FormTry(){
                             <option value="Surabaya Selatan">Surabaya Selatan</option>
                             <option value="Surabaya Barat">Surabaya Barat</option>
                             <option value="Surabaya timur">Surabaya timur</option>
+                            <option value="Surabaya Pusat">Surabaya Pusat</option>
+
                         </Form.Select>
                     </Form.Group>
 

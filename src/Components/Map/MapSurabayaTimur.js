@@ -66,9 +66,9 @@ export default function Peta(){
     
       <Box sx={{
         marginTop:"5vw",
-        marginLeft:"15vw"
+        marginLeft:"1vw"
         }}>
-      <MapContainer center={[-7.2509696,112.7519789]} zoom={13} scrollWheelZoom={true}>
+      <MapContainer center={[-7.2509696,112.7519789]} zoom={13} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

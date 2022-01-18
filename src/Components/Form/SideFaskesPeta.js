@@ -14,10 +14,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
-import NovemberTabel from '../Table/Tabel/TableNovember';
+import PetaFaskes from '../Map/MapFaskes.js';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import CreateIcon from '@mui/icons-material/Create';
-import TableViewIcon from '@mui/icons-material/TableView';
 
 const drawerWidth = 240;
 
@@ -40,7 +39,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   }),
 );
 
-const AppBar = styled(MuiAppBar, {
+const AppBar = styled(MuiAppBar, {   
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   transition: theme.transitions.create(['margin', 'width'], {
@@ -81,7 +80,7 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <NovemberTabel />
+      <PetaFaskes />
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
@@ -94,34 +93,25 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{marginRight:"20vw"}}>
-           Rekapan Data bulanan Kasus Covid 19 Kota Surabaya
+            List Faskes Kota Surabaya 
           </Typography>
 
-          <Button href='TableOktober' variant="contained" color="warning" size='small' 
+          <Button href='TableNovember' variant="contained" color="warning" size='small' 
             sx ={{marginRight:1}}>
                 Previous
               </Button>
             
-            <Button href='TableDesember' variant="contained" color="secondary" size='small' 
+            <Button href='TableJanuari' variant="contained" color="secondary" size='small' 
             sx ={{marginRight:1}}>
                 Next
               </Button>
-            
-            <Button href='/Timeline'
-            variant="contained" 
-            color="info" 
-            size='small'
-            sx ={{marginRight:1}}
-            >
-                TimeLine
-              </Button>
-
+           
               <Button href='/GrafikCoba' variant="contained" color="success" size='small'>
                 Diagram
               </Button>
 
-              <Button href='/FormNovember ' variant="contained" color="error" size='small' style={{marginLeft:10}}>
-                  Input Form
+              <Button href='/TableFaskes ' variant="contained" color="error" size='small' style={{marginLeft:10}}>
+                  Table faskes
               </Button>
 
         </Toolbar>
@@ -152,7 +142,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
       
           <List>
-                {['Utara','Selatan','Barat','Timur','Pusat','PetaFaskes'].map((tempat) =>
+                {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
                   <ListItem>
                   <AddLocationIcon color="warning"></AddLocationIcon>
                   <Button variant="text" href={"/"+tempat}>
@@ -165,11 +155,11 @@ export default function PersistentDrawerLeft() {
 
         <List>
           <Button size="medium" variant="text" color="success" sx={{marginLeft:"3vw"}} href='/Form'>Form</Button>
-          {['TableSeptember','TableOktober','TableDesember','TableJanuari','TableFaskes'].map((table) =>
+        {['TableSeptember','Barat','Timur','Pusat'].map((tempat) =>
                   <ListItem>
-                  {/* <CreateIcon></CreateIcon> */}
-                  <Button variant="text" href={"/"+table} startIcon={<TableViewIcon />}>
-                     {table}
+                  <CreateIcon></CreateIcon>
+                  <Button variant="text" href={"/"+tempat}>
+                     {tempat}
                   </Button>
                   </ListItem>
                 )}

@@ -17,6 +17,7 @@ import Button from '@mui/material/Button';
 import JanuariTabel from '../Table/Tabel/TableJanuari.js';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import CreateIcon from '@mui/icons-material/Create';
+import TableViewIcon from '@mui/icons-material/TableView';
 
 const drawerWidth = 240;
 
@@ -151,7 +152,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
       
           <List>
-                {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
+                {['Utara','Selatan','Barat','Timur','Pusat','PetaFaskes'].map((tempat) =>
                   <ListItem>
                   <AddLocationIcon color="warning"></AddLocationIcon>
                   <Button variant="text" href={"/"+tempat}>
@@ -164,11 +165,11 @@ export default function PersistentDrawerLeft() {
 
         <List>
           <Button size="medium" variant="text" color="success" sx={{marginLeft:"3vw"}} href='/Form'>Form</Button>
-        {['Utara','Selatan','Barat','Timur','Pusat'].map((tempat) =>
+          {['TableSeptember','TableOktober','TableNovember','TableDesember','TableFaskes'].map((table) =>
                   <ListItem>
-                  <CreateIcon></CreateIcon>
-                  <Button variant="text" href={"/"+tempat}>
-                     {tempat}
+                  {/* <CreateIcon></CreateIcon> */}
+                  <Button variant="text" href={"/"+table} startIcon={<TableViewIcon />}>
+                     {table}
                   </Button>
                   </ListItem>
                 )}

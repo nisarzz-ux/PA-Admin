@@ -88,7 +88,7 @@ export default function BasicTable() {
     setPage(0);
   };
 
-  const filter = 'Kenjeran';
+  
 
   return (
     <Box sx={{marginTop:"5vw"}}>    
@@ -115,8 +115,6 @@ export default function BasicTable() {
             <TableCell align="center" className={classes.tableCell}>Jenis Faskes</TableCell>
             <TableCell align="center"className={classes.tableCell}>Alamat</TableCell>
             <TableCell align="center" className={classes.tableCell}>Status</TableCell>
-            <TableCell align="center" className={classes.tableCell}>Lat Koordinat </TableCell>
-            <TableCell align="center" className={classes.tableCell}>Long Koordinat</TableCell>
             <TableCell align="center" className={classes.tableCell}>Action</TableCell>
           </TableRow>
         </TableHead>
@@ -124,14 +122,12 @@ export default function BasicTable() {
         <TableBody>
           {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
             <TableRow  
-              key={row.id_tableSep}>
-              <TableCell align="left">{row.kecamatan}</TableCell>
+              key={row.id_faskes}>
+              <TableCell align="left">{row.nama_faskes}</TableCell>
               <TableCell align="center">{row.bagian_wilayah}</TableCell>
               <TableCell align="center">{row.jenis_faskes}</TableCell>
               <TableCell align="center">{row.alamat}</TableCell>
               <TableCell align="center">{row.status}</TableCell>
-              <TableCell align="center">{row.latKoordinat}</TableCell>
-              <TableCell align="center">{row.longKoordinat}</TableCell>
               
               <TableCell>
               <Grid container>
