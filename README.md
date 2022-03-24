@@ -1,3 +1,6 @@
+# The Description About This My Project 
+This is my last project on last student on D4 Infomatics Engineering , Politeknik Elektro Negeri Surabaya. The Project is Frontend about Analytic of Spread Covid-19 Using GIS
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
